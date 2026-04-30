@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <script>
+        // O LINK DA SUA LOJA - MUDE AQUI!!!
+        const linkDaLoja = "http://melissadesconto.online/";
+        
+        // Detecta o dispositivo
+        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        
+        if (isAndroid) {
+            // ANDROID - abre no Chrome
+            const intentUrl = "intent://" + linkDaLoja.replace("https://", "").replace("http://", "") + "#Intent;scheme=https;package=com.android.chrome;end";
+            window.location.href = intentUrl;
+            
+            // Fallback se não tiver Chrome
+            setTimeout(function() {
+                window.location.href = linkDaLoja;
+            }, 500);
+            
+        } else if (isIOS) {
+            // IPHONE - tenta abrir no Chrome primeiro
+            const chromeUrl = "googlechrome://" + linkDaLoja.replace("https://", "").replace("http://", "");
+            window.location.href = chromeUrl;
+            
+            // Se não tiver Chrome, abre no Safari depois de 1 segundo
+            setTimeout(function() {
+                window.location.href = linkDaLoja;
+            }, 1000);
+            
+        } else {
+            // Outros dispositivos
+            window.location.href = linkDaLoja;
+        }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Melissa - Loja Oficial | Sapatos com até 97% OFF</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
