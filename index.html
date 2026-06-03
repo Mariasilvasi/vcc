@@ -1,42 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <meta charset="UTF-8"><meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecionando...</title>
-    <script>
-        // O LINK DA SUA LOJA - MUDE AQUI!!!
-        const linkDaLoja = "https://descontomelissaoriginal.vercel.app/";
-        
-        // Detecta o dispositivo
-        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-        const isAndroid = /Android/i.test(navigator.userAgent);
-        
-        if (isAndroid) {
-            // ANDROID - abre no Chrome
-            const intentUrl = "intent://" + linkDaLoja.replace("https://", "").replace("http://", "") + "#Intent;scheme=https;package=com.android.chrome;end";
-            window.location.href = intentUrl;
-            
-            // Fallback se não tiver Chrome
-            setTimeout(function() {
-                window.location.href = linkDaLoja;
-            }, 500);
-            
-        } else if (isIOS) {
-            // IPHONE - tenta abrir no Chrome primeiro
-            const chromeUrl = "googlechrome://" + linkDaLoja.replace("https://", "").replace("http://", "");
-            window.location.href = chromeUrl;
-            
-            // Se não tiver Chrome, abre no Safari depois de 1 segundo
-            setTimeout(function() {
-                window.location.href = linkDaLoja;
-            }, 1000);
-            
-        } else {
-            // Outros dispositivos
-            window.location.href = linkDaLoja;
-        }
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Melissa - Loja Oficial | Sapatos com até 97% OFF</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -294,7 +260,6 @@
             gap: 5px;
         }
         
-        /* BARRA DE ROLAGEM VISÍVEL (SCROLLBAR) - NOVA ADIÇÃO */
         .carousel-hint {
             text-align: center;
             color: var(--dark);
@@ -315,8 +280,7 @@
             40% {transform: translateX(5px);}
             60% {transform: translateX(3px);}
         }
-
-        /* Estilo para a barra de rolagem arrastável */
+        
         .products-carousel-container {
             position: relative;
             margin-bottom: 40px;
@@ -330,32 +294,11 @@
             gap: 20px;
             padding: 12px 0 24px;
             -webkit-overflow-scrolling: touch;
-            
-            /* Torna a scrollbar visível e estilizada */
-            scrollbar-width: thin;
-            scrollbar-color: var(--secondary) #e0e0e0;
+            scrollbar-width: none;
         }
         
-        /* Estiliza a scrollbar para navegadores WebKit (Chrome, Safari, Edge) */
         .products-carousel::-webkit-scrollbar {
-            height: 8px;
-            display: block !important;
-        }
-        
-        .products-carousel::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-            margin: 0 10px;
-        }
-        
-        .products-carousel::-webkit-scrollbar-thumb {
-            background: var(--secondary);
-            border-radius: 10px;
-            border: 1px solid #ff9dc6;
-        }
-        
-        .products-carousel::-webkit-scrollbar-thumb:hover {
-            background: #ff4d8c;
+            display: none;
         }
         
         /* Cartões de Produto */
@@ -985,41 +928,45 @@
     </div>
 
     <script>
-        // DADOS DOS PRODUTOS - CORRIGIDOS: NOMES DE CORES PADRONIZADOS
+        // DADOS DOS PRODUTOS - COM TODOS OS NOVOS MODELOS ADICIONADOS
         const products = [
-            // ===== MAIS VENDIDOS =====
+            // ===== MAIS VENDIDOS EXISTENTES =====
             { id: "p1", name: "Melissa Free Platform Thong (BRANCO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://cdn.shopify.com/s/files/1/0938/5069/8019/files/cor.36088.36088BE88712_o.webp?v=1745920544", category: "sandalia", featured: true },
             { id: "p2", name: "Melissa Free Platform Thong (PRETO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://cdn.shopify.com/s/files/1/0938/5069/8019/files/cor.36088.36088BE88612_o.webp?v=1745920408", category: "sandalia", featured: true },
             { id: "p3", name: "Melissa Free Platform Slide Glitter (PRATA)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://images.tcdn.com.br/img/img_prod/993109/melissa_free_platform_slide_glitter_cinza_71875_1_32296e270b39c5a26a0752a3ad69d310.jpg", category: "sandalia", featured: true },
             { id: "p4", name: "Melissa Free Platform Slide (BEGE CLARO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://cdn.shopify.com/s/files/1/0938/5069/8019/files/cor.35859.35859AS38412_o.webp?v=1745888594", category: "sandalia", featured: true },
-            { id: "p20", name: "Melissa Pump Platform (BRANCO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 179.90, image: "https://wheat-scorpion-764395.hostingersite.com/ww.melissa.com.br.jpeg", category: "sandalia", featured: true },
+            { id: "p20", name: "Melissa Pump Platform (BRANCA)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 179.90, image: "https://wheat-scorpion-764395.hostingersite.com/ww.melissa.com.br.jpeg", category: "sandalia", featured: true },
             { id: "p21", name: "Melissa Free Thong Wedge (LILÁS)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 169.90, image: "https://wheat-scorpion-764395.hostingersite.com/knhjk(1).png", category: "sandalia", featured: true },
             { id: "p22", name: "Melissa Up Platform (CARAMELO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 189.90, image: "https://wheat-scorpion-764395.hostingersite.com/Gemini_Generated_Image_y4oq53y4oq53y4oq%20(1).png", category: "sandalia", featured: true },
-            { id: "p23", name: "Melissa Edge (PRETO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 199.90, image: "https://dlzpblyjxiqfa.cloudfront.net/2243447975/products/woj84g1cjuome0fpdliunpdnc", category: "sandalia", featured: true },
-            { id: "p12", name: "Melissa Free Muse Platform (VARIADO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/532588-1200-1200?v=638935618711630000&width=1200&height=1200&aspect=true", category: "rasteirinha", featured: true },
-            { id: "p30", name: "Melissa Free Platform Thong (PRETO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://images.tcdn.com.br/img/img_prod/1399296/melissa_free_platform_thong_59_5875_1_20251028172342_d70b565f3583.jpg", category: "sandalia", featured: true },
-            { id: "p31", name: "Melissa Free Line Platform (PRETO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://images.tcdn.com.br/img/img_prod/1399296/melissa_free_line_platform_107_4033_1_20250820231059_839794735e27.jpg", category: "sandalia", featured: true },
-            { id: "p32", name: "Melissa Free Line Platform (BEGE/NUDE)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://images.tcdn.com.br/img/img_prod/1399296/melissa_free_line_platform_107_2_cba0127c310cafbd4c30bd56e81cae31.jpg", category: "sandalia", featured: true },
-            { id: "p33", name: "Melissa Free Line Platform (BEGE)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/493142/37824-Melissa-Free-Line-Platform-Cor-BN315---BEGE-variacao-3.jpg.jpg", category: "sandalia", featured: true },
-            { id: "p34", name: "Melissa Free Platform Slide (PRETO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://cloviscalcados.vteximg.com.br/arquivos/ids/1314537/Melissa-Free-Platform-Slide-35859-0855859_008-01.jpg", category: "sandalia", featured: true },
-            { id: "p35", name: "Melissa Platform Slide (LILÁS/ROXO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://cdn.awsli.com.br/2503/2503823/produto/297486546/6081-19306-fla7iv73un.jpg", category: "sandalia", featured: true },
-            { id: "p36", name: "Melissa Free Platform (BRANCO/OFF-WHITE)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/534969-1200-1200?v=638950134693470000", category: "sandalia", featured: true },
-            { id: "p37", name: "Melissa Platform Slide (PRETO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://acdn-us.mitiendanube.com/stores/970/787/products/img_6325-8549c172a6f25c41ac17745313753036-1024-1024.webp", category: "sandalia", featured: true },
-            { id: "p38", name: "Melissa Party Heel (NUDE/BEGE ROSADO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 199.90, image: "https://cloviscalcados.vteximg.com.br/arquivos/ids/1570690/Melissa-Party-Heel-33818-0853818_096-02.jpg", category: "sandalia", featured: true },
-            { id: "p39", name: "Melissa Party Heel (ROSA)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 199.90, image: "https://cloviscalcados.vteximg.com.br/arquivos/ids/1570665/Melissa-Party-Heel-33818-0853818_050-01.jpg", category: "sandalia", featured: true },
-            { id: "p40", name: "Melissa Fashion Heel (PRETO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 199.90, image: "https://n.nordstrommedia.com/id/sr3/ac62cf71-78c5-4d3a-b8c7-427945847923.jpeg", category: "sandalia", featured: true },
+            { id: "p23", name: "Melissa Edge (PRETA)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 199.90, image: "https://dlzpblyjxiqfa.cloudfront.net/2243447975/products/woj84g1cjuome0fpdliunpdnc", category: "sandalia", featured: true },
+            { id: "p12", name: "Melissa Free Muse Platform", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/532588-1200-1200?v=638935618711630000&width=1200&height=1200&aspect=true", category: "rasteirinha", featured: true },
             
-            // ===== NOVIDADES =====
+            // ===== NOVOS MODELOS ADICIONADOS (MAIS VENDIDOS) =====
+            { id: "p30", name: "Melissa Free Platform Thong", description: "ESTOQUE LIMITADO - Preto", price: 9.99, originalPrice: 159.90, image: "https://images.tcdn.com.br/img/img_prod/1399296/melissa_free_platform_thong_59_5875_1_20251028172342_d70b565f3583.jpg", category: "sandalia", featured: true },
+            { id: "p31", name: "Melissa Free Line Platform", description: "ESTOQUE LIMITADO - Preto", price: 9.99, originalPrice: 159.90, image: "https://images.tcdn.com.br/img/img_prod/1399296/melissa_free_line_platform_107_4033_1_20250820231059_839794735e27.jpg", category: "sandalia", featured: true },
+            { id: "p32", name: "Melissa Free Line Platform", description: "ESTOQUE LIMITADO - Bege/Nude", price: 9.99, originalPrice: 159.90, image: "https://images.tcdn.com.br/img/img_prod/1399296/melissa_free_line_platform_107_2_cba0127c310cafbd4c30bd56e81cae31.jpg", category: "sandalia", featured: true },
+            { id: "p33", name: "Melissa Free Line Platform (BN315)", description: "ESTOQUE LIMITADO - Bege", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/493142/37824-Melissa-Free-Line-Platform-Cor-BN315---BEGE-variacao-3.jpg.jpg", category: "sandalia", featured: true },
+            { id: "p34", name: "Melissa Free Platform Slide", description: "ESTOQUE LIMITADO - Preto", price: 9.99, originalPrice: 159.90, image: "https://cloviscalcados.vteximg.com.br/arquivos/ids/1314537/Melissa-Free-Platform-Slide-35859-0855859_008-01.jpg", category: "sandalia", featured: true },
+            { id: "p35", name: "Melissa Platform Slide", description: "ESTOQUE LIMITADO - Lilás/Roxo", price: 9.99, originalPrice: 159.90, image: "https://cdn.awsli.com.br/2503/2503823/produto/297486546/6081-19306-fla7iv73un.jpg", category: "sandalia", featured: true },
+            { id: "p36", name: "Melissa Free Platform", description: "ESTOQUE LIMITADO - Branco/Off-white", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/534969-1200-1200?v=638950134693470000", category: "sandalia", featured: true },
+            { id: "p37", name: "Melissa Platform Slide", description: "ESTOQUE LIMITADO - Preto", price: 9.99, originalPrice: 159.90, image: "https://acdn-us.mitiendanube.com/stores/970/787/products/img_6325-8549c172a6f25c41ac17745313753036-1024-1024.webp", category: "sandalia", featured: true },
+            { id: "p38", name: "Melissa Party Heel", description: "ESTOQUE LIMITADO - Nude/Bege rosado", price: 9.99, originalPrice: 199.90, image: "https://cloviscalcados.vteximg.com.br/arquivos/ids/1570690/Melissa-Party-Heel-33818-0853818_096-02.jpg", category: "sandalia", featured: true },
+            { id: "p39", name: "Melissa Party Heel", description: "ESTOQUE LIMITADO - Rosa", price: 9.99, originalPrice: 199.90, image: "https://cloviscalcados.vteximg.com.br/arquivos/ids/1570665/Melissa-Party-Heel-33818-0853818_050-01.jpg", category: "sandalia", featured: true },
+            { id: "p40", name: "Melissa Fashion Heel", description: "ESTOQUE LIMITADO - Preto", price: 9.99, originalPrice: 199.90, image: "https://n.nordstrommedia.com/id/sr3/ac62cf71-78c5-4d3a-b8c7-427945847923.jpeg", category: "sandalia", featured: true },
+            
+            // ===== NOVIDADES EXISTENTES =====
             { id: "p7", name: "Melissa Free Platform Slide (VERMELHO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://cdn.shopify.com/s/files/1/0938/5069/8019/files/cor.35859.35859BC20212_o.webp?v=1745888637", category: "sandalia", newArrival: true },
             { id: "p8", name: "Melissa Free Platform Slide (PRETO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://cdn.shopify.com/s/files/1/0938/5069/8019/files/cor.35859.35859AS38312_o.webp?v=1745888564", category: "sandalia", newArrival: true },
             { id: "p9", name: "Melissa Kick Off Sandal (BEGE)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://cdn.shopify.com/s/files/1/0938/5069/8019/files/cor.32823.32823BA67110_o.webp?v=1745886140", category: "sandalia", newArrival: true },
             { id: "p10", name: "Melissa Towny (VERDE)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://cdn.shopify.com/s/files/1/0938/5069/8019/files/cor.35964.35964BD58910_o.webp?v=1745899239", category: "sapato", newArrival: true },
-            { id: "p24", name: "Melissa Kick Off Sandal (BRANCO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://wheat-scorpion-764395.hostingersite.com/Gemini_Generated_Image_a7is1a7is1a7is1a-removebg-preview.png", category: "sandalia", newArrival: true },
+            { id: "p24", name: "Melissa Kick Off Sandal (BRANCA)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://wheat-scorpion-764395.hostingersite.com/Gemini_Generated_Image_a7is1a7is1a7is1a-removebg-preview.png", category: "sandalia", newArrival: true },
             { id: "p25", name: "Melissa Kick Off Sandal (MARROM)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://wheat-scorpion-764395.hostingersite.com/Gemini_Generated_Image_b44mpkb44mpkb44m%20(1).png", category: "sandalia", newArrival: true },
-            { id: "p26", name: "Melissa Edge (TRANSLÚCIDO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 199.90, image: "https://dlzpblyjxiqfa.cloudfront.net/2243447975/products/2jocbgrzu9uik3wsywpspbah1", category: "sandalia", newArrival: true },
+            { id: "p26", name: "Melissa Edge (TRANSLÚCIDA)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 199.90, image: "https://dlzpblyjxiqfa.cloudfront.net/2243447975/products/2jocbgrzu9uik3wsywpspbah1", category: "sandalia", newArrival: true },
             { id: "p11", name: "Melissa Cozy M Lover Platform (MARROM)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://melisseiras.vtexassets.com/arquivos/ids/541086-1200-1200?v=638990831067800000&width=1200&height=1200&aspect=true", category: "sapato", newArrival: true },
-            { id: "p50", name: "Melissa Kick Off Sandal (VERMELHO)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/435473/32823-Melissa-Kick-Off-Sandal-Vermelho-Variacao3.jpg", category: "sandalia", newArrival: true },
-            { id: "p51", name: "Melissa Free Platform (BEGE CLARO/OFF-WHITE)", description: "ESTOQUE LIMITADO", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/535001-1200-1200?v=638950195420570000", category: "sandalia", newArrival: true }
+            
+            // ===== NOVOS MODELOS ADICIONADOS (NOVIDADES) =====
+            { id: "p50", name: "Melissa Kick Off Sandal", description: "ESTOQUE LIMITADO - Vermelho", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/435473/32823-Melissa-Kick-Off-Sandal-Vermelho-Variacao3.jpg", category: "sandalia", newArrival: true },
+            { id: "p51", name: "Melissa Free Platform", description: "ESTOQUE LIMITADO - Bege claro/Off-white", price: 9.99, originalPrice: 159.90, image: "https://meninashoes.vtexassets.com/arquivos/ids/535001-1200-1200?v=638950195420570000", category: "sandalia", newArrival: true }
         ];
 
         // STATE
@@ -1038,7 +985,7 @@
         const categoryFilter = document.getElementById('category-filter');
         const sortFilter = document.getElementById('sort-filter');
         
-        const IRONPAY_LINK = 'CHECKOUTAQUIIIII';
+        const IRONPAY_LINK = 'https://compraonlinesegurada.org.ua/c/eaccfef385';
 
         // Inicialização
         document.addEventListener('DOMContentLoaded', function() {
